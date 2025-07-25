@@ -26,7 +26,7 @@ img {
   --BUTTON-HOVER-BG: hsla(278, 68%, 11%, 0.8);
 
   /* GRADIENTS */
-  --CARD-BACK-GRAD: linear(-20deg, #fff 0%, #d2d3d9 100%);
+  --CARD-BACK-GRAD: linear-gradient(-20deg, #fff 0%, #d2d3d9 100%);
 
   /* TYPOGRAPHY */
   --FF: "Space Grotesk", sans-serif;
@@ -69,6 +69,11 @@ body {
   min-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
+  background-color: var(--WHITE);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5.6875rem;
 }
 
 h1,
@@ -79,6 +84,322 @@ h2 {
   font-weight: normal;
 }
 
-a:any-link {
-  text-decoration: none;
+/* || HEADER */
+.header-wrapper {
+  width: 100%;
+  height: 240px;
+  background-image: url("./images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.header-container-inner {
+  margin: 2rem auto 0px;
+  width: 343px;
+  height: 251px;
+  position: relative;
+}
+
+/* || CARD-FRONT */
+.card-front {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 286px;
+  height: 157px;
+  padding: 1.5375rem 1.3056rem 1.225rem 1.1875rem;
+  background-image: url("./images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.brand-group {
+  display: flex;
+  width: 245px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8125rem;
+}
+
+.steward-logo img {
+  max-width: 101px;
+}
+
+.visa-logo img {
+  max-width: 46px;
+}
+
+.nfc-group {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 0.875rem;
+}
+
+.nfc-chip img {
+  max-width: 24px;
+}
+
+.nfc-icon img {
+  max-width: 13.5px;
+}
+
+.card-number {
+  font: 500 1.125rem var(--FF);
+  letter-spacing: 0.1375rem;
+  color: var(--WHITE);
+  margin-bottom: 1.0625rem;
+}
+
+.last-group {
+  display: flex;
+  width: 245.11px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.owner-name {
+  font: 500 0.5625rem var(--FF);
+  letter-spacing: 0.0806rem;
+  color: var(--WHITE);
+  text-transform: uppercase;
+}
+
+.expiry-date {
+  font: 500 0.5625rem var(--FF);
+  letter-spacing: 0.0806rem;
+  color: var(--WHITE);
+}
+
+/* || CARD-BACK */
+.card-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 286px;
+  height: 157px;
+  border-radius: 6px;
+  padding: 0.9213rem 0rem 3.9087rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-image: var(--CARD-BACK-GRAD);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.magnetic-strip {
+  width: 100%;
+  height: 34.6px;
+  background-color: #2f2f2f;
+  margin-bottom: 0.9613rem;
+}
+
+.signature {
+  width: 230.98px;
+  height: 29.74px;
+  border-radius: 4px;
+  padding-right: 0.6744rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #adb5be;
+}
+
+.cvc {
+  font: 500 0.5625rem var(--FF);
+  letter-spacing: 0.0806rem;
+  line-height: 29.74px;
+  color: var(--WHITE);
+}
+
+/* || FORM */
+.card-details-form {
+  width: 327px;
+  min-height: 374px;
+  display: flex;
+  flex-flow: column;
+  gap: 1.75rem;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: 1.25rem;
+}
+
+.input-title {
+  font: var(--BODY-M);
+  letter-spacing: var(--BODY-M-LS);
+  color: var(--DEEP-VIOLET);
+  margin-bottom: 0.5625rem;
+  text-transform: uppercase;
+}
+
+.full-name-wrapper,
+.card-num-wrapper {
+  width: 327px;
+}
+
+.date-wrapper {
+  width: 72px;
+}
+
+.cvc-wrapper {
+  width: 164px;
+}
+
+.full-name,
+.card-num,
+.date-input,
+.cvc-input {
+  width: 100%;
+  background-color: var(--WHITE);
+  border: 1px solid var(--LIGHT-GREY);
+  border-radius: 8px;
+  padding: 0.6875rem 0rem 0.6875rem 1rem;
+  font: var(--HEADING-L);
+  color: var(--DEEP-VIOLET);
+  caret-color: var(--DEEP-VIOLET);
+}
+
+.full-name::placeholder,
+.card-num::placeholder,
+.date-input::placeholder,
+.cvc-input::placeholder {
+  color: hsla(278, 68%, 11%, 0.25);
+}
+
+.full-name:focus,
+.card-num:focus,
+.date-input:focus,
+.cvc-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.full-name.valid,
+.card-num.valid,
+.date-input.valid,
+.cvc-input.valid {
+  color: var(--DEEP-VIOLET);
+  border: 1px solid var(--LIGHT-GREY);
+  caret-color: var(--DEEP-VIOLET);
+}
+
+.full-name.invalid,
+.card-num.invalid,
+.date-input.invalid,
+.cvc-input.invalid {
+  color: var(--ERROR-MESSAGE);
+  border: 1px solid var(--ERROR-MESSAGE);
+  caret-color: var(--ERROR-MESSAGE);
+}
+
+.message {
+  margin-top: 8px;
+  font: var(--BODY-S);
+  display: none;
+}
+
+.expiry-group .message {
+  max-width: 152px;
+}
+
+.error-message {
+  color: var(--ERROR-MESSAGE);
+}
+
+.success-message {
+  color: var(--SUCCESS-MESSAGE);
+}
+
+.date-cvc-group {
+  display: flex;
+  gap: 11px;
+}
+
+.date-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-flow: row;
+}
+
+.submit-button {
+  background-color: var(--DEEP-VIOLET);
+  color: var(--WHITE);
+  padding: 0rem 8.125rem;
+  font: var(--HEADING-L);
+  line-height: 53px;
+  border-radius: 8px;
+  border: none;
+}
+
+.submit-button:disabled {
+  background-color: var(--BUTTON-DISABLED-BG);
+}
+
+.video-link:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3125rem;
+  font: var(--BODY-L);
+  letter-spacing: var(--BODY-L-LS);
+  color: var(--DEEP-VIOLET);
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.video-icon img {
+  max-width: 26px;
+}
+
+/* THANKS-HTML */
+.main-thanks-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.main-thanks__hero {
+  margin-bottom: 2.1875rem;
+}
+
+.main-thanks__hero img {
+  max-width: 80px;
+}
+
+.main-thanks__title {
+  font: var(--HEADING-XL);
+  letter-spacing: var(--HEADING-XL-LS);
+  color: var(--DEEP-VIOLET);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.main-thanks__description {
+  font: var(--HEADING-L);
+  color: var(--PURPLISH-GREY);
+  margin-bottom: 48px;
+}
+
+.continue-button {
+  background-color: var(--DEEP-VIOLET);
+  color: var(--WHITE);
+  padding: 0rem 7.75rem;
+  font: var(--HEADING-L);
+  line-height: 53px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+}
+
+.continue-button:disabled {
+  background-color: var(--BUTTON-DISABLED-BG);
 }
