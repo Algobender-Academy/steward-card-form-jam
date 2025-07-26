@@ -6,12 +6,9 @@
 */
 const form = document.querySelector("#cardDetailsForm");
 const liveData = {};
-const isIndexPage =
-  window.location.pathname.includes("steward-card-form-jam") ||
-  window.location.pathname.includes("index.html");
 
 // Safety Check
-if (form && isIndexPage) {
+if (form) {
   const inputs = form.querySelectorAll("input"); // Created a NodeList
   const submitButton = form.querySelector(".submit-button");
 
