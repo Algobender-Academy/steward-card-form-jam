@@ -8,7 +8,7 @@ const form = document.querySelector("#cardDetailsForm");
 const liveData = {};
 
 // Safety Check
-if (form) {
+if (form && window.location.pathname.endsWith("index.html")) {
   const inputs = form.querySelectorAll("input"); // Created a NodeList
   const submitButton = form.querySelector(".submit-button");
 
@@ -325,7 +325,10 @@ if (form) {
 const storedData = localStorage.getItem("userFormData");
 const userData = JSON.parse(storedData);
 
-if (document.querySelector(".main-thanks-wrapper")) {
+if (
+  document.querySelector(".main-thanks-wrapper") &&
+  window.location.pathname.endsWith("thanks.html")
+) {
   window.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.querySelector(".header-wrapper");
     if (wrapper) {
