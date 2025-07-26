@@ -6,9 +6,12 @@
 */
 const form = document.querySelector("#cardDetailsForm");
 const liveData = {};
+const isIndexPage =
+  window.location.pathname.includes("index.html") ||
+  window.location.pathname === "/";
 
 // Safety Check
-if (form && window.location.pathname.endsWith("index.html")) {
+if (form && isIndexPage) {
   const inputs = form.querySelectorAll("input"); // Created a NodeList
   const submitButton = form.querySelector(".submit-button");
 
@@ -325,10 +328,7 @@ if (form && window.location.pathname.endsWith("index.html")) {
 const storedData = localStorage.getItem("userFormData");
 const userData = JSON.parse(storedData);
 
-if (
-  document.querySelector(".main-thanks-wrapper") &&
-  window.location.pathname.endsWith("thanks.html")
-) {
+if (document.querySelector(".main-thanks-wrapper")) {
   window.addEventListener("DOMContentLoaded", () => {
     const wrapper = document.querySelector(".header-wrapper");
     if (wrapper) {
