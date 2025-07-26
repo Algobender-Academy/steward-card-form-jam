@@ -550,7 +550,8 @@ h2 {
   }
 
   /* || FORM */
-  .main-wrapper {
+  .main-wrapper,
+  .main-thanks-wrapper {
     margin-left: 21.8125rem;
   }
 
