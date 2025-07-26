@@ -342,6 +342,7 @@ h2 {
 
 .submit-button:disabled {
   background-color: var(--BUTTON-DISABLED-BG);
+  cursor: not-allowed;
 }
 
 .video-link:any-link {
@@ -402,4 +403,233 @@ h2 {
 
 .continue-button:disabled {
   background-color: var(--BUTTON-DISABLED-BG);
+  cursor: not-allowed;
+}
+
+/* || Desktop */
+@media screen and (min-width: 992px) {
+  body {
+    flex-flow: row;
+    gap: 0px;
+    overflow: hidden;
+  }
+
+  /* || HEADER */
+  .header-wrapper {
+    width: 33.54%;
+    height: 100vh;
+    display: block;
+    position: relative;
+  }
+
+  .header-container-outer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -222px;
+  }
+
+  .header-container-inner {
+    margin: 0px;
+    width: 541px;
+    height: 527px;
+  }
+
+  /* || CARD-FRONT */
+  .card-front {
+    left: 0;
+    bottom: 282px;
+    width: 447px;
+    height: 245px;
+    padding: 2.4375rem 1.9912rem 1.6563rem 2rem;
+    border-radius: 10px;
+  }
+
+  .brand-group {
+    width: 383px;
+    margin-bottom: 1.625rem;
+  }
+
+  .steward-logo img {
+    max-width: 162px;
+  }
+
+  .visa-logo img {
+    max-width: 74px;
+  }
+
+  .nfc-group {
+    gap: 0.3125rem;
+    margin-bottom: 1.625rem;
+  }
+
+  .nfc-chip img {
+    max-width: 32px;
+  }
+
+  .nfc-icon img {
+    max-width: 18px;
+  }
+
+  .card-number {
+    font: var(--HEADING-XL);
+    letter-spacing: var(--HEADING-XL-LS);
+    margin-bottom: 1.5938rem;
+  }
+
+  .last-group {
+    width: 383.14px;
+  }
+
+  .owner-name {
+    font: var(--BODY-L);
+    letter-spacing: var(--BODY-L-LS);
+  }
+
+  .expiry-date {
+    font: var(--BODY-L);
+    letter-spacing: var(--BODY-L-LS);
+  }
+
+  /* || CARD-BACK */
+  .card-back {
+    top: 282px;
+    right: 0;
+    width: 447px;
+    height: 245px;
+    border-radius: 10px;
+    padding: 1.4375rem 0rem 2.9375rem;
+  }
+
+  .magnetic-strip {
+    height: 54px;
+    margin-bottom: 1.5rem;
+  }
+
+  .signature {
+    width: 361px;
+    height: 38px;
+    padding-right: 1rem;
+    margin-bottom: 2.0625rem;
+  }
+
+  .cvc {
+    font: var(--BODY-L);
+    letter-spacing: var(--BODY-L-LS);
+    line-height: 38px;
+  }
+
+  .misc-pattern {
+    display: block;
+  }
+
+  .misc-pattern img {
+    max-width: 186px;
+  }
+
+  .globetrotter-logo {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  .globetrotter-logo img {
+    max-width: 298px;
+  }
+
+  .globetrotter-model {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .globetrotter-model img {
+    max-width: 338px;
+  }
+
+  /* || FORM */
+  .main-wrapper {
+    margin-left: 21.8125rem;
+  }
+
+  .card-details-form {
+    width: 381px;
+    min-height: 410px;
+    gap: 2.5rem;
+  }
+
+  .form-wrapper {
+    gap: 1.625rem;
+  }
+
+  .full-name-wrapper,
+  .card-num-wrapper {
+    width: 381px;
+  }
+
+  .date-wrapper {
+    width: 80px;
+  }
+
+  .cvc-wrapper {
+    width: 191px;
+  }
+
+  .expiry-group .message {
+    max-width: 170px;
+  }
+
+  .date-cvc-group {
+    gap: 1.25rem;
+  }
+
+  .date-group {
+    gap: 10px;
+  }
+
+  .submit-button {
+    padding: 0rem 9.8125rem;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    background-color: var(--BUTTON-HOVER-BG);
+  }
+
+  .submit-button:disabled:hover {
+    background-color: var(--BUTTON-DISABLED-BG);
+  }
+
+  .video-link:hover {
+    color: var(--PURPLISH-GREY);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* THANKS-HTML */
+  .continue-button {
+    padding: 0rem 9.4375rem;
+    cursor: pointer;
+  }
+
+  .continue-button:hover {
+    background-color: var(--BUTTON-HOVER-BG);
+  }
+
+  .continue-button:disabled:hover {
+    background-color: var(--BUTTON-DISABLED-BG);
+  }
+}
+
+/* || Ultra wide screens */
+@media screen and (min-width: 1920px) {
+  .globetrotter-logo img {
+    max-width: calc(298px * 2);
+  }
+
+  .globetrotter-model img {
+    max-width: calc(338px * 2);
+  }
 }
