@@ -10,7 +10,7 @@ const liveData = {};
 // Safety Check
 window.addEventListener("DOMContentLoaded", () => {
   if (form) {
-    const inputs = form.querySelectorAll("input");
+    const inputs = form.querySelectorAll("input"); // Created a NodeList
     const submitButton = form.querySelector(".submit-button");
 
     /* 
@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     inputs.forEach((input) => {
       // Always assume your user is dumb
 
+      // Gatekeepers
       input.addEventListener("keypress", (e) => {
         if (
           (input.name === "cardNumber" ||
@@ -42,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       input.addEventListener("input", (e) => {
         const { name } = e.target;
-
+        console.log(e);
         if (name === "cardNumber") {
           const rawValue = e.target.value.replace(/\D/g, "");
           const formatted = rawValue.replace(/(.{4})/g, "$1 ").trim();
