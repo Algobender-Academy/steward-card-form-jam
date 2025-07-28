@@ -148,6 +148,27 @@ h2 {
   max-width: 13.5px;
 }
 
+.embossed {
+  letter-spacing: 2px;
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #f2f2f2,
+    #e6e6e6,
+    #ffffff,
+    #cccccc,
+    #ffffff
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    1px 1px 1px rgba(0, 0, 0, 0.4),
+    -1px -1px 1px rgba(255, 255, 255, 0.7),
+    2px 2px 2px rgba(0, 0, 0, 0.3),
+    -2px -2px 2px rgba(255, 255, 255, 0.5);
+}
+
 .card-number {
   font: 500 1.125rem var(--FF);
   letter-spacing: 0.1375rem;
